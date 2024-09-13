@@ -27,7 +27,7 @@ url = " https://islomapi.uz/api/present/week?region=Xiva"
 response = requests.get(url).json()
 for i in response:
      region=i['region']
-     date=i['date']
+     date=i['date'][1:11]
      hafta=i['weekday']
      xijriy_sana=i['hijri_date']['month']
      xijriy_kun=i['hijri_date']['day']
@@ -42,7 +42,7 @@ url1 = " https://islomapi.uz/api/present/week?region=Toshkent"
 response = requests.get(url1).json()
 for i in response:
      region1=i['region']
-     date1=i['date']
+     date1=i['date'][1:11]
      hafta1=i['weekday']
      xijriy_sana1=i['hijri_date']['month']
      xijriy_kun1=i['hijri_date']['day']
@@ -58,7 +58,7 @@ url2 = " https://islomapi.uz/api/present/week?region=Andijon"
 response = requests.get(url2).json()
 for i in response:
      region2=i['region']
-     date2=i['date']
+     date2=i['date'][1:11]
      hafta2=i['weekday']
      xijriy_sana2=i['hijri_date']['month']
      xijriy_kun2=i['hijri_date']['day']
@@ -73,7 +73,7 @@ url3 = " https://islomapi.uz/api/present/week?region=Angren"
 response = requests.get(url3).json()
 for i in response:
      region3=i['region']
-     date3=i['date']
+     date3=i['date'][1:11]
      hafta3=i['weekday']
      xijriy_sana3=i['hijri_date']['month']
      xijriy_kun3=i['hijri_date']['day']
@@ -89,7 +89,7 @@ url4 = " https://islomapi.uz/api/present/week?region=Buxoro"
 response = requests.get(url4).json()
 for i in response:
      region4=i['region']
-     date4=i['date']
+     date4=i['date'][1:11]
      hafta4=i['weekday']
      xijriy_sana4=i['hijri_date']['month']
      xijriy_kun4=i['hijri_date']['day']
@@ -105,7 +105,7 @@ url5 = " https://islomapi.uz/api/present/week?region=Guliston"
 response = requests.get(url5).json()
 for i in response:
      region5=i['region']
-     date5=i['date']
+     date5=i['date'][1:11]
      hafta5=i['weekday']
      xijriy_sana5=i['hijri_date']['month']
      xijriy_kun5=i['hijri_date']['day']
@@ -121,7 +121,7 @@ url6 = " https://islomapi.uz/api/present/week?region=Jizzax"
 response = requests.get(url6).json()
 for i in response:
      region6=i['region']
-     date6=i['date']
+     date6=i['date'][1:11]
      hafta6=i['weekday']
      xijriy_sana6=i['hijri_date']['month']
      xijriy_kun6=i['hijri_date']['day']
@@ -137,7 +137,7 @@ url7 = " https://islomapi.uz/api/present/week?region=Qarshi"
 response = requests.get(url7).json()
 for i in response:
      region7=i['region']
-     date7=i['date']
+     date7=i['date'][1:11]
      hafta7=i['weekday']
      xijriy_sana7=i['hijri_date']['month']
      xijriy_kun7=i['hijri_date']['day']
@@ -154,7 +154,7 @@ url8 = " https://islomapi.uz/api/present/week?region=Marg`ilon"
 response = requests.get(url8).json()
 for i in response:
      region8=i['region']
-     date8=i['date']
+     date8=i['date'][1:11]
      hafta8=i['weekday']
      xijriy_sana8=i['hijri_date']['month']
      xijriy_kun8=i['hijri_date']['day']
@@ -170,7 +170,7 @@ url9 = " https://islomapi.uz/api/present/week?region=Namangan"
 response = requests.get(url9).json()
 for i in response:
      region9=i['region']
-     date9=i['date']
+     date9=i['date'][1:11]
      hafta9=i['weekday']
      xijriy_sana9=i['hijri_date']['month']
      xijriy_kun9=i['hijri_date']['day']
@@ -185,7 +185,7 @@ url10 = " https://islomapi.uz/api/present/week?region=Navoiy"
 response = requests.get(url10).json()
 for i in response:
      region10=i['region']
-     date10=i['date']
+     date10=i['date'][1:11]
      hafta10=i['weekday']
      xijriy_sana10=i['hijri_date']['month']
      xijriy_kun10=i['hijri_date']['day']
@@ -201,7 +201,7 @@ url11 = " https://islomapi.uz/api/present/week?region=Nukus"
 response = requests.get(url11).json()
 for i in response:
      region11=i['region']
-     date11=i['date']
+     date11=i['date'][1:11]
      hafta11=i['weekday']
      xijriy_sana11=i['hijri_date']['month']
      xijriy_kun11=i['hijri_date']['day']
@@ -217,7 +217,7 @@ url12 = " https://islomapi.uz/api/present/week?region=Samarqand"
 response = requests.get(url12).json()
 for i in response:
      region12=i['region']
-     date12=i['date']
+     date12=i['date'][1:11]
      hafta12=i['weekday']
      xijriy_sana12=i['hijri_date']['month']
      xijriy_kun12=i['hijri_date']['day']
@@ -233,7 +233,7 @@ url13 = " https://islomapi.uz/api/present/week?region=Termiz"
 response = requests.get(url13).json()
 for i in response:
      region13=i['region']
-     date13=i['date']
+     date13=i['date'][1:11]
      hafta13=i['weekday']
      xijriy_sana13=i['hijri_date']['month']
      xijriy_kun13=i['hijri_date']['day']
@@ -248,7 +248,7 @@ url14 = " https://islomapi.uz/api/present/week?region=Urganch"
 response = requests.get(url14).json()
 for i in response:
      region14=i['region']
-     date14=i['date']
+     date14=i['date'][1:11]
      hafta14=i['weekday']
      xijriy_sana14=i['hijri_date']['month']
      xijriy_kun14=i['hijri_date']['day']
@@ -264,7 +264,7 @@ url15 = " https://islomapi.uz/api/present/week?region=Farg`ona"
 response = requests.get(url15).json()
 for i in response:
      region15=i['region']
-     date15=i['date']
+     date15=i['date'][1:11]
      hafta15=i['weekday']
      xijriy_sana15=i['hijri_date']['month']
      xijriy_kun15=i['hijri_date']['day']
@@ -532,10 +532,44 @@ async def echo_handler(message: Message) -> None:
 async def echo_handler(message: Message) -> None:
     await message.answer_video(video="https://t.me/xivabotuchun/130",caption='Qurbon Xayit Namozi', reply_markup=nafil)
 
+
+@dp.message(F.text=='Zuxo Namozi')
+async def echo_handler(message: Message) -> None:
+    await message.answer_video(video="https://t.me/xivabotuchun/144",caption='''Расулуллоҳ саллоллоҳу алайҳи ва саллам айтдилар: "Кимки ўн икки ракаат зуҳо намози ўқиса, Аллоҳ унга жаннатда олтиндан бир қаср бино қилгайдир".
+Термизий, Ибн Можа, Байҳақий, Табароний, Баззор ва Ибн Абу Осим ривоят қилишган.''', reply_markup=nafil)
+
 @dp.message(F.text=='Janaza Namozi')
 async def echo_handler(message: Message) -> None:
     await message.answer_video(video="https://t.me/xivabotuchun/131",caption='Janaza Namozi', reply_markup=nafil)
+
+
+
+@dp.message(F.text=='Taxajjud Namozi')
+async def echo_handler(message: Message) -> None:
+    await message.answer_video(video="https://t.me/xivabotuchun/149",caption='Taxajjud Namozi', reply_markup=nafil)
+
+
+
+ 
+@dp.message(F.text=='Istixora Namozi')
+async def echo_handler(message: Message) -> None:
+    await message.answer_video(video="https://t.me/xivabotuchun/150",caption='Istixora Namozi', reply_markup=nafil)   
+
+
+@dp.message(F.text=='Taxorat Namozi')
+async def echo_handler(message: Message) -> None:
+    await message.answer_video(video="https://t.me/xivabotuchun/148",caption='Taxorat Namozi', reply_markup=nafil)
+
+
+@dp.message(F.text=='Xojat Namozi')
+async def echo_handler(message: Message) -> None:
+    await message.answer_video(video="https://t.me/xivabotuchun/146",caption='''Абдуллоҳ ибн Абу Авфо розияллоҳу анҳудан ривоят қилинади: 
+
+«Пайғамбар соллаллоҳу алайҳи васаллам: «Кимнинг Аллоҳга ва Бани одамдан бирортасига ҳожати бўлса, яхшилаб таҳорат қилсин, сўнгра икки ракат намоз ўқисин. Кейин Аллоҳга сано ва Пайғамбар соллаллоҳу алайҳи васалламга саловат айтсин. Сўнгра: «Ҳалийму Карим Аллоҳдан ўзга ҳеч илоҳи маъбуд йўқ. Улуғ Аршнинг Роббиси Аллоҳ покдир. Оламларнинг Роббиси Аллоҳга ҳамдлар бўлсин. Мен Сендан: раҳматингни вожиб қилувчи, мағфиратингни тақозо қилувчи нарсаларни ва ҳар бир яхшиликдан ғаниматни, ҳар бир ёмонликдан саломатлик сўрайман. Менинг ҳеч бир гуноҳимни қўймай мағфират қилгин, ҳеч бир ғамимни қўймай кушойиш эт, Ўзинг рози бўлган ҳеч бир ҳожатимни қўймай, албатта чиқаргин. Эй Арҳамар Роҳимийн», десин», дедилар» 
+
+Имом Термизий ва Ибн Можа ривоят қилган.''', reply_markup=nafil)    
    
+
 
 
 @dp.message(F.text=='Yangi Masjid Uchun Hayriya🕌')
@@ -1138,6 +1172,11 @@ async def back(message:Message):
 @dp.message(F.text=='Ortga<-')
 async def back(message:Message):
   await message.answer('Asossiy menyu',reply_markup=menyu)
+
+
+@dp.message(F.text=='Ortga:')
+async def back(message:Message):
+  await message.answer('Asossiy menyu',reply_markup=menyu)  
 
 
 @dp.message(F.text=="ORTGA <-")

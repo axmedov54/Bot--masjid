@@ -19,9 +19,9 @@ menyu = ReplyKeyboardMarkup(
 
 nafil=ReplyKeyboardMarkup(
     keyboard=[
-        
-        [KeyboardButton(text=('Kurbon Xayit Namozi'))],
-        [KeyboardButton(text=('Janaza Namozi'))],
+        [KeyboardButton(text=('Janaza Namozi')),KeyboardButton(text=('Zuxo Namozi'))],
+        [KeyboardButton(text=('Xojat Namozi')),KeyboardButton(text=('Taxorat Namozi'))],
+        [KeyboardButton(text=('Taxajjud Namozi')),KeyboardButton(text=('Istixora Namozi'))],
         [KeyboardButton(text="ORTGA <-")]
     ],
     resize_keyboard=True,
@@ -52,7 +52,7 @@ masjid=ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text=('🕌Said Niyoz Sholikor🕌'))],
         [KeyboardButton(text=('🕌Xasan Basriy🕌'))],
-        [KeyboardButton(text=('🕌Kasmabot jomey Masjidi🕌'))],
+        [KeyboardButton(text=('🕌Kasmabot jome Masjidi🕌'))],
         [KeyboardButton(text="Ortga<-")]
     ],
     resize_keyboard=True,
