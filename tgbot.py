@@ -2,17 +2,20 @@
 import asyncio
 import logging
 import sys
-from aiogram import Bot, Dispatcher, html, F
+import sqlite3
+from aiogram import Bot, Dispatcher, html, F,types
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 from config import BOT_TOKEN as token
-from button import menyu,oqish,erkaklar,ayollar,gusl,masjid,nafil,quran1,Shaxarlar
+from button import *
 import requests
 
 bot = Bot(token=token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
+
+
 
 
 @dp.message(CommandStart())
@@ -27,10 +30,9 @@ url = " https://islomapi.uz/api/present/week?region=Xiva"
 response = requests.get(url).json()
 for i in response:
      region=i['region']
-     date=i['date'][1:11]
+     date=i['date'][1:10]
      hafta=i['weekday']
      xijriy_sana=i['hijri_date']['month']
-     xijriy_kun=i['hijri_date']['day']
      tong=i['times']['tong_saharlik']
      quyosh=i['times']['quyosh']
      peshin=i['times']['peshin']
@@ -45,7 +47,6 @@ for i in response:
      date1=i['date'][1:11]
      hafta1=i['weekday']
      xijriy_sana1=i['hijri_date']['month']
-     xijriy_kun1=i['hijri_date']['day']
      tong1=i['times']['tong_saharlik']
      quyosh1=i['times']['quyosh']
      peshin1=i['times']['peshin']
@@ -58,10 +59,9 @@ url2 = " https://islomapi.uz/api/present/week?region=Andijon"
 response = requests.get(url2).json()
 for i in response:
      region2=i['region']
-     date2=i['date'][1:11]
+     date2=i['date'][1:10]
      hafta2=i['weekday']
      xijriy_sana2=i['hijri_date']['month']
-     xijriy_kun2=i['hijri_date']['day']
      tong2=i['times']['tong_saharlik']
      quyosh2=i['times']['quyosh']
      peshin2=i['times']['peshin']
@@ -73,10 +73,9 @@ url3 = " https://islomapi.uz/api/present/week?region=Angren"
 response = requests.get(url3).json()
 for i in response:
      region3=i['region']
-     date3=i['date'][1:11]
+     date3=i['date'][1:10]
      hafta3=i['weekday']
      xijriy_sana3=i['hijri_date']['month']
-     xijriy_kun3=i['hijri_date']['day']
      tong3=i['times']['tong_saharlik']
      quyosh3=i['times']['quyosh']
      peshin3=i['times']['peshin']
@@ -89,10 +88,9 @@ url4 = " https://islomapi.uz/api/present/week?region=Buxoro"
 response = requests.get(url4).json()
 for i in response:
      region4=i['region']
-     date4=i['date'][1:11]
+     date4=i['date'][1:10]
      hafta4=i['weekday']
      xijriy_sana4=i['hijri_date']['month']
-     xijriy_kun4=i['hijri_date']['day']
      tong4=i['times']['tong_saharlik']
      quyosh4=i['times']['quyosh']
      peshin4=i['times']['peshin']
@@ -105,10 +103,9 @@ url5 = " https://islomapi.uz/api/present/week?region=Guliston"
 response = requests.get(url5).json()
 for i in response:
      region5=i['region']
-     date5=i['date'][1:11]
+     date5=i['date'][1:10]
      hafta5=i['weekday']
      xijriy_sana5=i['hijri_date']['month']
-     xijriy_kun5=i['hijri_date']['day']
      tong5=i['times']['tong_saharlik']
      quyosh5=i['times']['quyosh']
      peshin5=i['times']['peshin']
@@ -121,10 +118,9 @@ url6 = " https://islomapi.uz/api/present/week?region=Jizzax"
 response = requests.get(url6).json()
 for i in response:
      region6=i['region']
-     date6=i['date'][1:11]
+     date6=i['date'][1:10]
      hafta6=i['weekday']
      xijriy_sana6=i['hijri_date']['month']
-     xijriy_kun6=i['hijri_date']['day']
      tong6=i['times']['tong_saharlik']
      quyosh6=i['times']['quyosh']
      peshin6=i['times']['peshin']
@@ -137,10 +133,9 @@ url7 = " https://islomapi.uz/api/present/week?region=Qarshi"
 response = requests.get(url7).json()
 for i in response:
      region7=i['region']
-     date7=i['date'][1:11]
+     date7=i['date'][1:10]
      hafta7=i['weekday']
      xijriy_sana7=i['hijri_date']['month']
-     xijriy_kun7=i['hijri_date']['day']
      tong7=i['times']['tong_saharlik']
      quyosh7=i['times']['quyosh']
      peshin7=i['times']['peshin']
@@ -150,14 +145,13 @@ for i in response:
 
 
 
-url8 = " https://islomapi.uz/api/present/week?region=Marg`ilon"
+url8 = " https://islomapi.uz/api/present/week?region=Marg'ilon"
 response = requests.get(url8).json()
 for i in response:
      region8=i['region']
-     date8=i['date'][1:11]
+     date8=i['date'][1:10]
      hafta8=i['weekday']
      xijriy_sana8=i['hijri_date']['month']
-     xijriy_kun8=i['hijri_date']['day']
      tong8=i['times']['tong_saharlik']
      quyosh8=i['times']['quyosh']
      peshin8=i['times']['peshin']
@@ -170,10 +164,9 @@ url9 = " https://islomapi.uz/api/present/week?region=Namangan"
 response = requests.get(url9).json()
 for i in response:
      region9=i['region']
-     date9=i['date'][1:11]
+     date9=i['date'][1:10]
      hafta9=i['weekday']
      xijriy_sana9=i['hijri_date']['month']
-     xijriy_kun9=i['hijri_date']['day']
      tong9=i['times']['tong_saharlik']
      quyosh9=i['times']['quyosh']
      peshin9=i['times']['peshin']
@@ -185,10 +178,9 @@ url10 = " https://islomapi.uz/api/present/week?region=Navoiy"
 response = requests.get(url10).json()
 for i in response:
      region10=i['region']
-     date10=i['date'][1:11]
+     date10=i['date'][1:10]
      hafta10=i['weekday']
      xijriy_sana10=i['hijri_date']['month']
-     xijriy_kun10=i['hijri_date']['day']
      tong10=i['times']['tong_saharlik']
      quyosh10=i['times']['quyosh']
      peshin10=i['times']['peshin']
@@ -201,10 +193,9 @@ url11 = " https://islomapi.uz/api/present/week?region=Nukus"
 response = requests.get(url11).json()
 for i in response:
      region11=i['region']
-     date11=i['date'][1:11]
+     date11=i['date'][1:10]
      hafta11=i['weekday']
      xijriy_sana11=i['hijri_date']['month']
-     xijriy_kun11=i['hijri_date']['day']
      tong11=i['times']['tong_saharlik']
      quyosh11=i['times']['quyosh']
      peshin11=i['times']['peshin']
@@ -217,10 +208,9 @@ url12 = " https://islomapi.uz/api/present/week?region=Samarqand"
 response = requests.get(url12).json()
 for i in response:
      region12=i['region']
-     date12=i['date'][1:11]
+     date12=i['date'][1:10]
      hafta12=i['weekday']
      xijriy_sana12=i['hijri_date']['month']
-     xijriy_kun12=i['hijri_date']['day']
      tong12=i['times']['tong_saharlik']
      quyosh12=i['times']['quyosh']
      peshin12=i['times']['peshin']
@@ -233,10 +223,9 @@ url13 = " https://islomapi.uz/api/present/week?region=Termiz"
 response = requests.get(url13).json()
 for i in response:
      region13=i['region']
-     date13=i['date'][1:11]
+     date13=i['date'][1:10]
      hafta13=i['weekday']
      xijriy_sana13=i['hijri_date']['month']
-     xijriy_kun13=i['hijri_date']['day']
      tong13=i['times']['tong_saharlik']
      quyosh13=i['times']['quyosh']
      peshin13=i['times']['peshin']
@@ -248,10 +237,9 @@ url14 = " https://islomapi.uz/api/present/week?region=Urganch"
 response = requests.get(url14).json()
 for i in response:
      region14=i['region']
-     date14=i['date'][1:11]
+     date14=i['date'][1:10]
      hafta14=i['weekday']
      xijriy_sana14=i['hijri_date']['month']
-     xijriy_kun14=i['hijri_date']['day']
      tong14=i['times']['tong_saharlik']
      quyosh14=i['times']['quyosh']
      peshin14=i['times']['peshin']
@@ -260,14 +248,13 @@ for i in response:
      hufton14=i['times']['hufton']
 
 
-url15 = " https://islomapi.uz/api/present/week?region=Farg`ona"
+url15 = " https://islomapi.uz/api/present/week?region=Farg'ona"
 response = requests.get(url15).json()
 for i in response:
      region15=i['region']
-     date15=i['date'][1:11]
+     date15=i['date'][1:10]
      hafta15=i['weekday']
      xijriy_sana15=i['hijri_date']['month']
-     xijriy_kun15=i['hijri_date']['day']
      tong15=i['times']['tong_saharlik']
      quyosh15=i['times']['quyosh']
      peshin15=i['times']['peshin']
@@ -281,7 +268,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date14}\n
   🌃 Hafta: {hafta14}\n
   🌃 Xijriy-Sana: { xijriy_sana14}\n
-  🌃 Xijriy-Kun:{ xijriy_kun14}\n
   🌃 Bomdod vaqti {tong14} 🕰\n
   🌇 Quyosh vaqti {quyosh14} 🕰\n
   🏞  peshin vaqti {peshin14} 🕰\n
@@ -296,7 +282,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date2}\n
   🌃 Hafta: {hafta2}\n
   🌃 Xijriy-Sana: { xijriy_sana2}\n
-  🌃 Xijriy-Kun:{ xijriy_kun2}\n
   🌃 Bomdod vaqti {tong2} 🕰\n
   🌇 Quyosh vaqti {quyosh2} 🕰\n
   🏞  peshin vaqti {peshin2} 🕰\n
@@ -312,7 +297,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date3}\n
   🌃 Hafta: {hafta3}\n
   🌃 Xijriy-Sana: { xijriy_sana3}\n
-  🌃 Xijriy-Kun:{ xijriy_kun3}\n
   🌃 Bomdod vaqti {tong3} 🕰\n
   🌇 Quyosh vaqti {quyosh3} 🕰\n
   🏞  peshin vaqti {peshin3} 🕰\n
@@ -327,7 +311,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date4}\n
   🌃 Haftab: {hafta4}\n
   🌃 Xijriy-Sana: { xijriy_sana4}\n
-  🌃 Xijriy-Kun:{ xijriy_kun4}\n
   🌃 Bomdod vaqti {tong4} 🕰\n
   🌇 Quyosh vaqti {quyosh4} 🕰\n
   🏞  peshin vaqti {peshin4} 🕰\n
@@ -342,7 +325,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date5}\n
   🌃 Hafta: {hafta}\n
   🌃 Xijriy-Sana: { xijriy_sana5}\n
-  🌃 Xijriy-Kun:{ xijriy_kun5}\n
   🌃 Bomdod vaqti {tong5} 🕰\n
   🌇 Quyosh vaqti {quyosh5} 🕰\n
   🏞  peshin vaqti {peshin5} 🕰\n
@@ -357,7 +339,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date6}\n
   🌃 Hafta: {hafta6}\n
   🌃 Xijriy-Sana: { xijriy_sana6}\n
-  🌃 Xijriy-Kun:{ xijriy_kun6}\n
   🌃 Bomdod vaqti {tong6} 🕰\n
   🌇 Quyosh vaqti {quyosh6} 🕰\n
   🏞  peshin vaqti {peshin6} 🕰\n
@@ -372,7 +353,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date7}\n
   🌃 Haftab: {hafta7}\n
   🌃 Xijriy-Sana: { xijriy_sana7}\n
-  🌃 Xijriy-Kun:{ xijriy_kun7}\n
   🌃 Bomdod vaqti {tong7} 🕰\n
   🌇 Quyosh vaqti {quyosh7} 🕰\n
   🏞  peshin vaqti {peshin7} 🕰\n
@@ -387,7 +367,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date8}\n
   🌃 Hafta: {hafta}\n
   🌃 Xijriy-Sana: { xijriy_sana8}\n
-  🌃 Xijriy-Kun:{ xijriy_kun8}\n
   🌃 Bomdod vaqti {tong8} 🕰\n
   🌇 Quyosh vaqti {quyosh8} 🕰\n
   🏞  peshin vaqti {peshin8} 🕰\n
@@ -402,7 +381,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date9}\n
   🌃 Hafta: {hafta9}\n
   🌃 Xijriy-Sana: { xijriy_sana9}\n
-  🌃 Xijriy-Kun:{ xijriy_kun9}\n
   🌃 Bomdod vaqti {tong9} 🕰\n
   🌇 Quyosh vaqti {quyosh9} 🕰\n
   🏞  peshin vaqti {peshin9} 🕰\n
@@ -418,7 +396,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date10}\n
   🌃 Hafta: {hafta10}\n
   🌃 Xijriy-Sana: { xijriy_sana10}\n
-  🌃 Xijriy-Kun:{ xijriy_kun10}\n
   🌃 Bomdod vaqti {tong10} 🕰\n
   🌇 Quyosh vaqti {quyosh10} 🕰\n
   🏞  peshin vaqti {peshin10} 🕰\n
@@ -433,7 +410,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date11}\n
   🌃 Hafta: {hafta11}\n
   🌃 Xijriy-Sana: { xijriy_sana11}\n
-  🌃 Xijriy-Kun:{ xijriy_kun11}\n
   🌃 Bomdod vaqti {tong11} 🕰\n
   🌇 Quyosh vaqti {quyosh11} 🕰\n
   🏞  peshin vaqti {peshin11} 🕰\n
@@ -448,7 +424,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date12}\n
   🌃 Hafta: {hafta12}\n
   🌃 Xijriy-Sana: { xijriy_sana12}\n
-  🌃 Xijriy-Kun:{ xijriy_kun12}\n
   🌃 Bomdod vaqti {tong12} 🕰\n
   🌇 Quyosh vaqti {quyosh12} 🕰\n
   🏞  peshin vaqti {peshin12} 🕰\n
@@ -463,7 +438,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date13}\n
   🌃 Hafta: {hafta13}\n
   🌃 Xijriy-Sana: { xijriy_sana13}\n
-  🌃 Xijriy-Kun:{ xijriy_kun13}\n
   🌃 Bomdod vaqti {tong13} 🕰\n
   🌇 Quyosh vaqti {quyosh13} 🕰\n
   🏞  peshin vaqti {peshin13} 🕰\n
@@ -478,7 +452,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date1}\n
   🌃 Hafta: {hafta1}\n
   🌃 Xijriy-Sana: { xijriy_sana1}\n
-  🌃 Xijriy-Kun:{ xijriy_kun1}\n
   🌃 Bomdod vaqti {tong1} 🕰\n
   🌇 Quyosh vaqti {quyosh1} 🕰\n
   🏞  peshin vaqti {peshin1} 🕰\n
@@ -493,7 +466,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date15}\n
   🌃 Hafta: {hafta15}\n
   🌃 Xijriy-Sana: { xijriy_sana15}\n
-  🌃 Xijriy-Kun:{ xijriy_kun15}\n
   🌃 Bomdod vaqti {tong15} 🕰\n
   🌇 Quyosh vaqti {quyosh15} 🕰\n
   🏞  peshin vaqti {peshin15} 🕰\n
@@ -508,7 +480,6 @@ async def shaxar1(message: Message):
   🌃 Kun: {date}\n
   🌃 Hafta: {hafta}\n
   🌃 Xijriy-Sana: { xijriy_sana}\n
-  🌃 Xijriy-Kun:{ xijriy_kun}\n
   🌃 Bomdod vaqti {tong} 🕰\n
   🌇 Quyosh vaqti {quyosh} 🕰\n
   🏞  peshin vaqti {peshin} 🕰\n
@@ -699,11 +670,19 @@ async def back(message:Message):
 #12:10
 @dp.message(F.text=='Quran Audio🫀')
 async def quran(message:Message):
-  await message.answer(text='Quran Audio',reply_markup=quran1)  
+  await message.answer(text='Quran Audio',reply_markup=ustozlar)  
+
+@dp.message(F.text=='Yasser Al-Dosari')
+async def send_welcome(message: types.Message):
+
+    await message.answer("Quran Audio", reply_markup=quran1)
+
+
 
 @dp.message(F.text == 'Al-Fatiha')
 async def quran_1(message: Message):
-    await message.answer_audio(audio='https://t.me/xivabotuchun/3', reply_markup=quran1)
+   await message.answer_audio(audio='https://t.me/xivabotuchun/3', reply_markup=quran1)
+
 
 @dp.message(F.text == 'Al-Baqarah')
 async def quran_2(message: Message):
@@ -893,6 +872,8 @@ async def quran_47(message: Message):
 @dp.message(F.text == 'Al-Fath')
 async def quran_48(message: Message):
     await message.answer_audio(audio='https://t.me/xivabotuchun/50', reply_markup=quran1)
+
+#keldi
 
 @dp.message(F.text == 'Al-Hujurat')
 async def quran_49(message: Message):

@@ -15,6 +15,19 @@ menyu = ReplyKeyboardMarkup(
     resize_keyboard=True,
     one_time_keyboard=True
 )
+#,KeyboardButton(text=(''))
+
+ustozlar=ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text=('Yasser Al-Dosari')),KeyboardButton(text=('Mishari bin Rashid al-Afasiy'))],
+        [KeyboardButton(text=('Abdurahmon as-Sudays'))],
+       
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=True
+)
+
+
 
 
 nafil=ReplyKeyboardMarkup(
